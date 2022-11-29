@@ -7,7 +7,7 @@ const dataSchema= new mongoose.Schema({
     images: {type: String},
     Price: Number,
     brand:String,
-    size:{type: [Number]},
+    size:{type: [String]},
 })
 
 const DataModel = mongoose.model('data',dataSchema)

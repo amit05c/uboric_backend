@@ -6,6 +6,7 @@ const { dataRouter } = require("./routes/data")
 const { cartRouter } = require("./routes/cart")
 const cors= require("cors")
 const app= express()
+const PORT= process.env.PORT || 8080
 app.use(cors())
 app.get("/",async(req,res)=>{
     res.send("welcome to myntra")
@@ -18,7 +19,7 @@ app.use("/data",dataRouter)
 app.use(authentication)
 app.use("/cart",cartRouter)
 
-app.listen(8080, async()=>{
+app.listen(PORT, async()=>{
   try{
      await connection
      console.log("server connected")
